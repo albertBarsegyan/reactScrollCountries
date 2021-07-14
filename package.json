@@ -1,0 +1,74 @@
+{
+  "name": "headerproject",
+  "version": "1.0.0",
+  "description": "project for testing purposes",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack",
+    "commit": "cz",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertBarsegyan/headerProject.git"
+  },
+  "author": "albert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albertBarsegyan/headerProject/issues"
+  },
+  "homepage": "https://github.com/albertBarsegyan/headerProject#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.14.5",
+    "autoprefixer": "^10.3.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^6.1.1",
+    "prettier": "^2.3.2",
+    "style-loader": "^3.0.0",
+    "svg-inline-loader": "^0.8.2",
+    "tailwindcss": "^2.2.4",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "worker-loader": "^3.0.8"
+  },
+  "dependencies": {
+    "favicons": "^6.2.2",
+    "favicons-webpack-plugin": "^5.0.2",
+    "file-loader": "^6.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-inlinesvg": "^2.3.0",
+    "react-router-dom": "^5.2.0",
+    "semantic-ui-react": "^2.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

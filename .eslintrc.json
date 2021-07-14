@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": ["airbnb"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-console": "error",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "linebreak-style": "off",
+    "react/prefer-stateless-function": "off",
+    "react/jsx-filename-extension": "off",
+    "no-useless-constructor": "off",
+    "no-unused-vars": "off"
+  }
+}
