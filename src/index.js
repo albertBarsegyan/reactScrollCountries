@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoContainer from './components/TodoContainer';
+import CounterContainer from './components/CounterContainer';
 
 import './styles.css';
 
-ReactDOM.render(<TodoContainer />, document.getElementById('root'));
+ReactDOM.render(<CounterContainer />, document.getElementById('root'));
