@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ButtonCommon from './ButtonCommon';
 import ControllerContainer from './ControllerContainer';
+import LocalStorage from './LocalStorage';
 
 class CounterContainer extends Component {
   constructor(props) {
@@ -11,6 +12,13 @@ class CounterContainer extends Component {
       minValue: 0,
       maxValue: 100,
     };
+  }
+
+  componentDidMount() {
+    const { maxValue, minValue, step } = this.state;
+    localStorage.setItem('maxVal', maxValue);
+    localStorage.setItem('minVal', minValue);
+    localStorage.setItem('step', step);
   }
 
   render() {
@@ -24,6 +32,7 @@ class CounterContainer extends Component {
             console.log(100);
           }}
         />
+        <LocalStorage minVal={minValue} maxVal={maxValue} step={step} />
         <div className="flex items-center justify-center flex-row">
           <div className="mx-4 my-4">
             <ButtonCommon
