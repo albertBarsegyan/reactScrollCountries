@@ -9,18 +9,20 @@ class LocalStorage extends Component {
     const { minVal, maxVal, step } = this.props;
     return (
       <div className="flex flex-col items-center justify-center  my-5">
-        <div><p className="text-green-500 text-3xl">Local storage data</p></div>
+        <div>
+          <p className="text-green-500 text-3xl">Local storage data</p>
+        </div>
         <div className="flex flex-row items-center justify-center my-2">
           <div className="mx-5">
             <span className="text-xl text-green-500">
               Min value:
-              {minVal }
+              {minVal}
             </span>
           </div>
           <div className="mx-5">
             <span className="text-xl text-green-500">
               Max value:
-              { maxVal}
+              {maxVal}
             </span>
           </div>
           <div className="mx-5">

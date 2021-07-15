@@ -7,17 +7,37 @@ class ControllerContainer extends Component {
     super(props);
   }
 
+  handleForm = (e) => {
+    e.preventDefault();
+    let formObject = new FormData(e.target);
+    formObject = [...formObject.entries()];
+    console.log(formObject);
+  };
+
   render() {
-    const { clickEvent } = this.props;
+    const { clickEvent, min, max } = this.props;
     return (
-      <form onSubmit="">
+      <form onSubmit={this.handleForm}>
         <div className="flex items-center justify-center mt-5">
-
-          <InputCommon placeHold="Set max" />
-          <InputCommon placeHold="Set min" />
-          <InputCommon placeHold="Set step" />
-          <ButtonCommon buttonName="Set" clickEvent={clickEvent} />
-
+          <InputCommon
+            placeHold="Set max"
+            name="maxValueInput"
+            min="0"
+            max={max}
+          />
+          <InputCommon
+            placeHold="Set min"
+            name="minValueInput"
+            min="0"
+            max={max}
+          />
+          <InputCommon
+            placeHold="Set step"
+            name="stepInput"
+            min="1"
+            max={max - min}
+          />
+          <button type="submit">Set</button>
         </div>
       </form>
     );

@@ -10,7 +10,7 @@ class CounterContainer extends Component {
       counter: 0,
       step: 1,
       minValue: 0,
-      maxValue: 100,
+      maxValue: 10,
     };
   }
 
@@ -22,12 +22,12 @@ class CounterContainer extends Component {
   }
 
   render() {
-    const {
-      counter, step, maxValue, minValue,
-    } = this.state;
+    const { counter, step, maxValue, minValue } = this.state;
     return (
       <div>
         <ControllerContainer
+          min={minValue}
+          max={maxValue}
           clickEvent={() => {
             console.log(100);
           }}
@@ -38,7 +38,7 @@ class CounterContainer extends Component {
             <ButtonCommon
               buttonName="Decrement"
               clickEvent={() => {
-                if (counter >= minValue) {
+                if (counter > minValue + 1) {
                   this.setState({ counter: counter - step });
                 } else {
                   this.setState({ counter: minValue });
