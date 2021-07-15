@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CounterContainer from './components/CounterContainer';
+import { Form } from 'semantic-ui-react';
+import CommonInput from './components/CommonInput';
+import FormContainer from './components/FormContainer';
 
 import './styles.css';
 
-ReactDOM.render(<CounterContainer />, document.getElementById('root'));
+ReactDOM.render(<FormContainer />, document.getElementById('root'));
