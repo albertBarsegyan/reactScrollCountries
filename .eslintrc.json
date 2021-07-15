@@ -3,9 +3,7 @@
     "browser": true,
     "es2020": true
   },
-  "extends": [
-    "airbnb"
-  ],
+  "extends": ["airbnb"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -14,11 +12,10 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "rules": {
     "import/no-unresolved": "off",
+    "react/button-has-type": "off",
     "import/extensions": "off",
     "linebreak-style": "off",
     "react/prefer-stateless-function": "off",
