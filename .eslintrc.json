@@ -3,7 +3,7 @@
     "browser": true,
     "es2020": true
   },
-  "extends": ["airbnb"],
+  "extends": ["eslint:recommended","airbnb"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {

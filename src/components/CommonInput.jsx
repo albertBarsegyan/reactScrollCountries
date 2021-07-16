@@ -6,15 +6,21 @@ class CommonInput extends Component {
   }
 
   render() {
-    const { type, placeholder, value, name } = this.props;
+    const { type, placeholder, value, name, errorMessage, ...data } = this.props;
     return (
-      <input
-        name={name}
-        value={value}
-        type={type}
-        placeholder={placeholder}
-        className="border border-purple-500 px-4 py-2 text-xl text-purple-500 outline-none"
-      />
+      <div>
+        <input
+          {...data}
+          name={name}
+          value={value}
+          type={type}
+          placeholder={placeholder}
+          className="border border-purple-500 px-4 py-2 text-xl text-purple-500 outline-none"
+        />
+        <div className="text-center text-red-500 text-xl">
+          <span>{errorMessage}</span>
+        </div>
+      </div>
     );
   }
 }

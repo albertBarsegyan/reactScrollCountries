@@ -8,11 +8,11 @@ class NameInputContainer extends Component {
 
   render() {
     return (
-      <div className="flex flex-row items-center justify-around">
-        <div className="mx-2">
+      <div className="flex flex-col items-center justify-around">
+        <div className="my-2">
           <CommonInput type="text" placeholder="Name" />
         </div>
-        <div className="mx-2">
+        <div className="my-2">
           <CommonInput type="text" placeholder="Surname" />
         </div>
       </div>
