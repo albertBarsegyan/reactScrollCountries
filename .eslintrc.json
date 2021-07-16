@@ -3,7 +3,10 @@
     "browser": true,
     "es2020": true
   },
-  "extends": ["eslint:recommended","airbnb"],
+  "extends": [
+    "eslint:recommended",
+    "airbnb"
+  ],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -12,7 +15,9 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "import/no-unresolved": "off",
     "react/button-has-type": "off",
@@ -21,6 +26,7 @@
     "react/prefer-stateless-function": "off",
     "react/jsx-filename-extension": "off",
     "no-useless-constructor": "off",
+    "no-useless-escape": "off",
     "no-unused-vars": "off",
     "react/prop-types": "off",
     "object-curly-newline": "off"

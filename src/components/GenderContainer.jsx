@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import CommonInput from './CommonInput';
 
 class GenderContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
