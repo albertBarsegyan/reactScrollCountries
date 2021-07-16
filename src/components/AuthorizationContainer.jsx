@@ -8,10 +8,16 @@ class AuthorizationContainer extends Component {
 
   render() {
     return (
-      <div>
-        <CommonInput placeholder="Email" type="email" />
-        <CommonInput placeholder="password" type="password" />
-        <CommonInput placeholder="Repeat Email" type="password" />
+      <div className="flex items-center justify-center flex-col">
+        <div className="my-2">
+          <CommonInput placeholder="Email" type="email" />
+        </div>
+        <div className="my-2">
+          <CommonInput placeholder="Password" type="password" />
+        </div>
+        <div className="my-2">
+          <CommonInput placeholder="Repeat password" type="password" />
+        </div>
       </div>
     );
   }

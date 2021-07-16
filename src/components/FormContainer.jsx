@@ -11,11 +11,11 @@ class FormContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="border-b border-purple-500 px-4 py-6">
         <form action="get">
+          <NameInputContainer />
           <AuthorizationContainer />
           <GenderContainer />
-          <NameInputContainer />
           <SubmitButton />
         </form>
       </div>

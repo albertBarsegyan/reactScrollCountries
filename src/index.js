@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Form } from 'semantic-ui-react';
-import CommonInput from './components/CommonInput';
-import FormContainer from './components/FormContainer';
+import Header from './components/Header';
 
 import './styles.css';
 
-ReactDOM.render(<FormContainer />, document.getElementById('root'));
+ReactDOM.render(<Header />, document.getElementById('root'));

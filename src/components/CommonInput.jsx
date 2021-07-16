@@ -13,7 +13,7 @@ class CommonInput extends Component {
         value={value}
         type={type}
         placeholder={placeholder}
-        className="border border-pink-500 px-4 py-2 text-xl text-pink-500 outline-none"
+        className="border border-purple-500 px-4 py-2 text-xl text-purple-500 outline-none"
       />
     );
   }

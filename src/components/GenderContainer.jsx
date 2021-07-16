@@ -9,14 +9,22 @@ class GenderContainer extends Component {
   render() {
     return (
       <div>
-        <div>
-          <span>Choose gender</span>
+        <div className="text-center">
+          <span className="text-purple-500 text-xl">Choose gender</span>
         </div>
-        <div>
-          <label htmlFor="male">Male</label>
-          <input type="radio" name="male" value="male" />
-          <label htmlFor="female">Female</label>
-          <input type="radio" name="male" value="female" />
+        <div className="flex flex-row items-center justify-center">
+          <div className="mx-3">
+            <label htmlFor="male" className="text-purple-500 mr-1">
+              Male
+            </label>
+            <input type="radio" name="male" value="male" />
+          </div>
+          <div className="mx-3">
+            <label htmlFor="female" className="text-purple-500 mr-1">
+              Female
+            </label>
+            <input type="radio" name="male" value="female" />
+          </div>
         </div>
       </div>
     );
