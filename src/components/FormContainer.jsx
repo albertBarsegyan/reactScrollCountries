@@ -15,17 +15,17 @@ class FormContainer extends React.Component {
       passwordError: '',
       passwordRepeatError: '',
       emailError: '',
-      formObject: '',
+
     };
     this.submitHandler = submitHandler.bind(this);
   }
 
   render() {
     const { surnameError, nameError, passwordError, passwordRepeatError, emailError, formObject } = this.state;
-    const { sendFormObject } = this.props;
+
     return (
       <div className="border-b border-purple-500 px-4 py-6 w-5/12">
-        <form onSubmit={(e) => { this.submitHandler(e); sendFormObject(formObject); }}>
+        <form onSubmit={(e) => { this.submitHandler(e); }}>
           <NameInputContainer
             sendNameError={(dataFromChild) => {
               this.setState({ nameError: dataFromChild });

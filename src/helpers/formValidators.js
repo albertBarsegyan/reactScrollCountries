@@ -67,13 +67,12 @@ export function emptyInputCheck(evn, stateName, stateValue) {
 export function submitHandler(evn) {
   evn.preventDefault();
   let formObject = new FormData(evn.target);
-  const notErrors = Object.values(this.state);
-  notErrors.pop();
-  notErrors.every((item, index, arr) => item === '');
+  const { sendTextCode } = this.props;
+  const notErrors = Object.values(this.state)
+    .every((item) => item === '');
   console.log(notErrors);
   if (notErrors) {
     formObject = JSON.stringify(Object.fromEntries([...formObject.entries()]));
-    this.setState({ formObject });
-    console.log('done', formObject);
+    sendTextCode(formObject);
   }
 }
