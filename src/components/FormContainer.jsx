@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import AuthorizationContainer from './AuthorizationContainer';
 import GenderContainer from './GenderContainer';
@@ -14,15 +15,17 @@ class FormContainer extends React.Component {
       passwordError: '',
       passwordRepeatError: '',
       emailError: '',
+      formObject: '',
     };
     this.submitHandler = submitHandler.bind(this);
   }
 
   render() {
-    const { surnameError, nameError, passwordError, passwordRepeatError, emailError } = this.state;
+    const { surnameError, nameError, passwordError, passwordRepeatError, emailError, formObject } = this.state;
+    const { sendFormObject } = this.props;
     return (
-      <div className="border-b border-purple-500 px-4 py-6">
-        <form onSubmit={this.submitHandler}>
+      <div className="border-b border-purple-500 px-4 py-6 w-5/12">
+        <form onSubmit={(e) => { this.submitHandler(e); sendFormObject(formObject); }}>
           <NameInputContainer
             sendNameError={(dataFromChild) => {
               this.setState({ nameError: dataFromChild });
