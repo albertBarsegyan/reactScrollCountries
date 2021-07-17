@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
-import CommonInput from './CommonInput';
 
 class GenderContainer extends Component {
   render() {
@@ -14,13 +13,13 @@ class GenderContainer extends Component {
             <label htmlFor="male" className="text-purple-500 mr-1">
               Male
             </label>
-            <input type="radio" name="male" value="male" />
+            <input type="radio" name="gender" value="male" required />
           </div>
           <div className="mx-3">
             <label htmlFor="female" className="text-purple-500 mr-1">
               Female
             </label>
-            <input type="radio" name="male" value="female" />
+            <input type="radio" name="gender" value="female" required />
           </div>
         </div>
       </div>

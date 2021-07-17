@@ -15,25 +15,37 @@ class NameInputContainer extends Component {
 
   render() {
     const { nameError, surnameError } = this.state;
+    const { sendNameError, sendSurnameError } = this.props;
     return (
       <div className="flex flex-col items-center justify-around">
         <div className="my-2">
           <CommonInput
             type="text"
-            name="Hello"
+            name="userName"
             placeholder="Name"
             errorMessage={nameError}
-            onChange={(e) => { this.usernameValidator(e, 'nameError', 'Invalid name'); }}
-            onBlur={(e) => { this.emptyInputCheck(e, 'nameError', 'Invalid name'); }}
+            onChange={(e) => {
+              this.usernameValidator(e, 'nameError', 'Invalid name.');
+            }}
+            onBlur={(e) => {
+              this.emptyInputCheck(e, 'nameError', 'Name is empty.');
+              sendNameError(nameError);
+            }}
           />
         </div>
         <div className="my-2">
           <CommonInput
             type="text"
+            name="userSurname"
             placeholder="Surname"
             errorMessage={surnameError}
-            onChange={(e) => { this.usernameValidator(e, 'surnameError', 'Invalid surname'); }}
-            onBlur={(e) => { this.emptyInputCheck(e, 'surnameError', 'Invalid surname'); }}
+            onChange={(e) => {
+              this.usernameValidator(e, 'surnameError', 'Invalid surname.');
+            }}
+            onBlur={(e) => {
+              this.emptyInputCheck(e, 'surnameError', 'Surname is empty.');
+              sendSurnameError(surnameError);
+            }}
           />
         </div>
       </div>
