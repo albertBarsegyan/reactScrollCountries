@@ -14,7 +14,8 @@
 // }
 // // console.log(areSimilar([1, 2, 3], [3, 2, 1]));
 
-function fn({ hello }) {
-  return hello;
-}
-console.log(fn({ hello: 'world' }));
+const obj = {
+  name: 'Albert',
+  age: '20',
+};
+console.log(JSON.stringify(obj, null, '\t'));

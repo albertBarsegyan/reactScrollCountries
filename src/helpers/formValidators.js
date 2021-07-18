@@ -70,9 +70,9 @@ export function submitHandler(evn) {
   const { sendTextCode } = this.props;
   const notErrors = Object.values(this.state)
     .every((item) => item === '');
-  console.log(notErrors);
+
   if (notErrors) {
-    formObject = JSON.stringify(Object.fromEntries([...formObject.entries()]));
+    formObject = JSON.stringify(Object.fromEntries([...formObject.entries()]), null, ' ');
     sendTextCode(formObject);
   }
 }

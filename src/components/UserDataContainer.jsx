@@ -13,7 +13,7 @@ class UserDataContainer extends Component {
     const { formObject } = this.props;
 
     return (
-      <div className="flex-col justify-center items-center h-auto w-5/12">
+      <div className="flex-col justify-center items-center h-auto  md:w-2/5 w-3/4">
         <div><h1 className="text-center text-gray-800 text-4xl">Form data</h1></div>
         <div className="mt-4">
           <CopyBlock

@@ -14,7 +14,7 @@ class Header extends Component {
   render() {
     const { formData } = this.state;
     return (
-      <div className="w-full flex flex-row items-baseline justify-center mt-4 gap-40">
+      <div className="w-full flex md:flex-row flex-col-reverse md:items-baseline items-center justify-center mt-4 gap-10 md:gap-20">
         <FormContainer sendTextCode={(dataFromForm) => this.setState({ formData: dataFromForm })} />
         <UserDataContainer formObject={formData} />
       </div>
