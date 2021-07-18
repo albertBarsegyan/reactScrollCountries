@@ -7,6 +7,7 @@ import {
   emptyInputCheck,
   passwordValidator,
   repeatPasswordCheck,
+  handlePasswordBlur,
 } from '../helpers/formValidators';
 
 class AuthorizationContainer extends Component {
@@ -17,11 +18,13 @@ class AuthorizationContainer extends Component {
       passwordError: '',
       passwordRepeatError: '',
       password: '',
+      repeatPassword: '',
     };
     this.emailValidator = emailValidator.bind(this);
     this.passwordValidator = passwordValidator.bind(this);
     this.emptyInputCheck = emptyInputCheck.bind(this);
     this.repeatPasswordCheck = repeatPasswordCheck.bind(this);
+    this.handlePasswordBlur = handlePasswordBlur.bind(this);
   }
 
   render() {
@@ -56,6 +59,7 @@ class AuthorizationContainer extends Component {
             onBlur={(e) => {
               this.emptyInputCheck(e, 'passwordError', 'Password is empty');
               sendPasswordError(passwordError);
+              handlePasswordBlur(e, 'password', 'repeatPassword');
             }}
           />
         </div>
@@ -69,6 +73,7 @@ class AuthorizationContainer extends Component {
             }}
             onBlur={(e) => {
               this.emptyInputCheck(e, 'passwordRepeatError', 'Input is empty.');
+              handlePasswordBlur(e, 'repeatPassword', 'password');
               sendPasswordRepeatError(passwordRepeatError);
             }}
           />
