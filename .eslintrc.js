@@ -12,5 +12,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'react/prefer-stateless-function': 'off',
+    'react/jsx-filename-extension': 'off',
+    'linebreak-style': 'off',
   },
 };
