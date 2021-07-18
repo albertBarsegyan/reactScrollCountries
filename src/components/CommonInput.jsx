@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 
 class CommonInput extends Component {
   render() {
-    const { errorMessage, ...attr } = this.props;
+    const { errorMessage, refProps, ...attr } = this.props;
     return (
       <div className="flex flex-col items-center justify-center">
         <input
           {...attr}
+          ref={refProps}
           className="border border-purple-500
             px-4 py-2 text-xl text-purple-500 outline-none placeholder-purple-500"
           required

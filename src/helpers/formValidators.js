@@ -22,7 +22,7 @@ export function emailValidator(evn, stateName, stateValue) {
 }
 
 // password valid
-export function passwordValidator(evn, stateName) {
+export function passwordValidator(evn, stateName, targetRef) {
   const inputValue = evn.target.value.trim() ?? evn;
   const { repeatPassword } = this.state;
   const allLettersRegex = /^[a-zA-Z]+$/;
@@ -50,24 +50,24 @@ export function passwordValidator(evn, stateName) {
     return;
   }
   this.setState({ [stateName]: '', password: inputValue });
-
-  if (repeatPassword !== '' && repeatPassword === inputValue) {
-    this.setState({ repeatPasswordError: '' });
+  if (targetRef.current.value !== '' && targetRef.current.value !== inputValue) {
+    this.setState({ [stateName]: 'Passwords don\'t match. ' });
     return;
   }
-  if (repeatPassword !== '' && repeatPassword !== inputValue) {
-    this.setState({ [stateName]: 'Passwords don\'t match. ' });
+
+  if (targetRef.current.value !== '' && targetRef.current.value === inputValue) {
+    this.setState({ repeatPasswordError: '' });
   }
 }
 
 // repeat password input checker
-export function repeatPasswordCheck(evn, errorName) {
+export function repeatPasswordCheck(evn, errorName, targetRef) {
   const inputValue = evn.target.value.trim();
-  if (this.state.password === '') {
+  if (targetRef.current.value === '') {
     this.setState({ [errorName]: 'Type valid password.' });
     return;
   }
-  if (inputValue !== this.state.password || inputValue === '') {
+  if (inputValue !== targetRef.current.value || inputValue === '') {
     this.setState({ [errorName]: "Passwords don't match!" });
     return;
   }
@@ -97,8 +97,13 @@ export function submitHandler(evn) {
     evn.target.reset();
   }
 }
-export function handlePasswordBlur(e, current, target) {
-  if (e.target.value !== '' && e.target.value === this.state[target] && this.state.passwordError === '' && this.state.repeatPasswordError === '') {
+export function handlePasswordBlur(e, refObject, stateObject) {
+  const { currentRef, targetRef } = refObject;
+  const { current, target } = stateObject;
+  // console.log(currentRef.current.value, targetRef.current, current, target);
+  console.log('handle blur outSide statement ->', refObject, stateObject);
+  if (currentRef.current.value !== '' && currentRef.current.value === targetRef.current.value && this.state.passwordError === '' && this.state.passwordRepeatError === '') {
+    console.log('handle blur inside statement');
     this.setState({ [current]: '', [target]: '' });
   }
 }
