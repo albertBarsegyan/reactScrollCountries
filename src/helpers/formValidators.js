@@ -1,5 +1,15 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
+// name first letter to upper case
+function formatInputName(string) {
+  let formateString;
+  if (string.includes(' ')) {
+    formateString = string.split(' ').map((item) => item[0].toUpperCase() + item.substring(1, item.length).toLowerCase()).join(' ');
+    return formateString;
+  }
+  formateString = string[0].toUpperCase() + string.substring(1, string.length).toLowerCase();
+  return formateString;
+}
 
 // user name and surname valid
 export function usernameValidator(evn, stateName, stateValue) {
@@ -81,7 +91,7 @@ export function emptyInputCheck(evn, stateName, stateValue) {
     this.setState({ [stateName]: [stateValue] });
   }
 }
-
+// form submit
 export function submitHandler(evn) {
   evn.preventDefault();
   let formObject = new FormData(evn.target);
@@ -92,7 +102,12 @@ export function submitHandler(evn) {
     .every((item) => item === '');
 
   if (notErrors) {
+    formObject.set('userName', formatInputName(formObject.get('userName')));
+    formObject.set('userSurname', formatInputName(formObject.get('userSurname')));
+    // formObject.delete('userName');
+    // formObject.delete('userSurname');
     formObject = JSON.stringify(Object.fromEntries([...formObject.entries()]), null, ' ');
+    console.log(formObject);
     sendTextCode(formObject);
     evn.target.reset();
   }
@@ -106,15 +121,4 @@ export function handlePasswordBlur(e, refObject, stateObject) {
     console.log('handle blur inside statement');
     this.setState({ [current]: '', [target]: '' });
   }
-}
-
-// name first letter to upper case
-function formatInputName(string) {
-  let formateString;
-  if (string.includes(' ')) {
-    formateString = string.split(' ').map((item) => item[0].toUpperCase() + item.substring(1, item.length).toLowerCase()).join(' ');
-    return formateString;
-  }
-  formateString = string[0].toUpperCase() + string.substring(1, string.length).toLowerCase();
-  return formateString;
 }
