@@ -7,12 +7,14 @@ export default class ListItem extends Component {
     return (
       <li>
         <div>
-          <div>
-            <img src={imgURL} alt="back" />
-          </div>
-          <div>
-            <span>{countryName}</span>
-          </div>
+          <button type="button">
+            <div>
+              <img src={imgURL} alt="back" />
+            </div>
+            <div>
+              <span>{countryName}</span>
+            </div>
+          </button>
         </div>
       </li>
     );
