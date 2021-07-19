@@ -16,5 +16,6 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'linebreak-style': 'off',
     'react/no-unused-state': 'off',
+    indent: 'off',
   },
 };

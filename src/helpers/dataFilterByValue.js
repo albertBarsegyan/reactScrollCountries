@@ -1,12 +1,22 @@
-export default function dataFilterByValue(dataArray, value) {
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+export default function dataFilterByValue(dataArray, value, filterBy) {
   return value.length > 0
     ? dataArray.filter((countryObject) => {
-        const name = countryObject.name.toLowerCase();
-
-        if (name.startsWith(value.toLowerCase())) {
-          return true;
+        const name = countryObject.name.trim().toLowerCase();
+        const { telephoneCode } = countryObject;
+        if (filterBy === 'name') {
+          if (name.startsWith(value.toLowerCase())) {
+            return true;
+          }
+          return false;
         }
-        return false;
+        if (filterBy === 'telephoneCode') {
+          if (telephoneCode.startsWith(value.trim())) {
+            return true;
+          }
+          return false;
+        }
       })
     : [];
 }

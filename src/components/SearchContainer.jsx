@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import dataFilterByValue from '../helpers/dataFilterByValue';
 import handleSearchOnChange from '../helpers/handleSearchOnChange';
 import DataListContainer from './DataListContainer';
+import InputType from './InputType';
 import ListItem from './ListItem';
 
 import LoaderContainer from './LoaderContainer';
@@ -13,12 +14,13 @@ export default class SearchContainer extends Component {
     this.state = {
       countryData: [],
       searchInputValue: '',
+      inputType: 'name',
     };
     this.handleSearchOnChange = handleSearchOnChange.bind(this);
   }
 
   render() {
-    const { countryData, searchInputValue } = this.state;
+    const { countryData, searchInputValue, inputType } = this.state;
     return (
       <div className="flex items-center justify-center">
         <div className="flex flex-col items-center justify-center mt-20 md:w-6/12">
@@ -27,13 +29,14 @@ export default class SearchContainer extends Component {
               this.setState({ countryData: countries });
             }}
           />
+          <InputType inputType={(type) => this.setState({ inputType: type })} />
           <SearchInput
             onChange={(e) => {
               this.handleSearchOnChange(e, 'searchInputValue');
             }}
           />
           <DataListContainer>
-            {dataFilterByValue(countryData, searchInputValue).map((item) => {
+            {dataFilterByValue(countryData, searchInputValue, inputType).map((item) => {
               const { name, flag, telephoneCode } = item;
               return (
                 <ListItem
