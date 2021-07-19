@@ -15,5 +15,6 @@ module.exports = {
     'react/prefer-stateless-function': 'off',
     'react/jsx-filename-extension': 'off',
     'linebreak-style': 'off',
+    'react/no-unused-state': 'off',
   },
 };

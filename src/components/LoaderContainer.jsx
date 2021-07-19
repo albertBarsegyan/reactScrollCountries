@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default class LoaderContainer extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export default class LoaderContainer extends Component {
   }
 
   componentDidMount() {
+    const { sendData } = this.props;
     //   get countries data
     axios
       .get('https://restcountries.eu/rest/v2/all')
@@ -27,6 +29,7 @@ export default class LoaderContainer extends Component {
       })
       .then((data) => {
         this.setState({ loadMessage: '', countryData: data });
+        sendData(data);
         return true;
       })
       .catch(() => {
@@ -43,3 +46,10 @@ export default class LoaderContainer extends Component {
     );
   }
 }
+
+LoaderContainer.propTypes = {
+  sendData: PropTypes.func,
+};
+LoaderContainer.defaultProps = {
+  sendData: null,
+};
