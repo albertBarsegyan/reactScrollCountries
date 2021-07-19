@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 export default class SearchInput extends Component {
-  componentDidMount() {}
-
   render() {
     return (
       <div>

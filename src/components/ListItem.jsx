@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 
 export default class ListItem extends Component {
   render() {
-    const { imgURL, countryName } = this.props;
+    const { imgURL, countryName, telephoneCode } = this.props;
     return (
       <li>
         <div>
-          <button type="button">
+          <button type="button" className="cursor-pointer">
             <div>
-              <img src={imgURL} alt="back" />
+              <span>{telephoneCode}</span>
+            </div>
+            <div>
+              <img src={imgURL} alt="back" width="60" />
             </div>
             <div>
               <span>{countryName}</span>
@@ -22,9 +25,11 @@ export default class ListItem extends Component {
 }
 ListItem.propTypes = {
   imgURL: PropTypes.string,
-  countryName: PropTypes.string,
+  telephoneCode: PropTypes.string,
+  countryName: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 ListItem.defaultProps = {
   imgURL: '',
   countryName: '',
+  telephoneCode: '',
 };

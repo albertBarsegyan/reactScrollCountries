@@ -55,6 +55,7 @@
     "worker-loader": "^3.0.8"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
     "file-loader": "^6.2.0",
