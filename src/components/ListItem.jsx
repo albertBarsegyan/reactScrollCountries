@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
-import logo from '../assets/img/logo.jpg';
+import PropTypes from 'prop-types';
 
 export default class ListItem extends Component {
   render() {
-    const { value, innerText } = this.props;
+    const { imgURL, countryName } = this.props;
     return (
-      <option value={value}>
-        <img src={logo} alt="" />
-      </option>
+      <li>
+        <div>
+          <div>
+            <img src={imgURL} alt="back" />
+          </div>
+          <div>
+            <span>{countryName}</span>
+          </div>
+        </div>
+      </li>
     );
   }
 }
+ListItem.propTypes = {
+  imgURL: PropTypes.string,
+  countryName: PropTypes.string,
+};
+ListItem.defaultProps = {
+  imgURL: '',
+  countryName: '',
+};
