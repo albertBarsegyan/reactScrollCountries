@@ -1,6 +1,10 @@
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 export default function dataFilterByValue(dataArray, value, filterBy) {
+  if (filterBy === 'default') {
+    return dataArray;
+  }
+
   return value.length > 0
     ? dataArray.filter((countryObject) => {
         const name = countryObject.name.trim().toLowerCase();

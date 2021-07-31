@@ -14,7 +14,7 @@ export default class SearchContainer extends Component {
     this.state = {
       countryData: [],
       searchInputValue: '',
-      inputType: 'name',
+      inputType: 'default',
     };
     this.handleSearchOnChange = handleSearchOnChange.bind(this);
   }
@@ -32,7 +32,7 @@ export default class SearchContainer extends Component {
           <InputType inputType={(type) => this.setState({ inputType: type })} />
           <SearchInput
             onChange={(e) => {
-              this.handleSearchOnChange(e, 'searchInputValue');
+              this.handleSearchOnChange(e, 'searchInputValue', 'inputType');
             }}
           />
           <DataListContainer>
